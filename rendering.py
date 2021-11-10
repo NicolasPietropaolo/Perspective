@@ -4,19 +4,19 @@ import serial
 import open3d as o3d
 import math
 
-s = serial.Serial("COM3", 115200)           # Connecting board to PC
+s = serial.Serial("COM3", 115200)           # Connects board to PC
 
-print("Connected with Microcontroller")     # Telling user that the microcontroller is connected
+print("Connected with Microcontroller")     #microcontroller is connected
 s.write(b'1')
 f = open("Data.xyz", "a")                   # Creates the file where the data is being written on
 
-delta_x = 250                               # The varible repersenst the movement done in the x axis
-SPINS_Amount = 10                           # The amount of data that is being collected before opening open3d
-                                            # Angle starts at zero, ends at angle 360, increment every 2.8125 deg. 
+delta_x = 250                               # repersenst movement in the x axis
+SPINS_Amount = 10                           # amount of data that is being collected before opening open3d
+                                            # Angle starts at zero, ends at 360, and increments every 2.8125 deg. 
                                             # All the dregree is multiplied by 1000000 so there is no decimal
 Temp = list(range(0, 3600000, 28125))       # Makes a temp list
 
-Angle = [None]*len(Temp)                    # Stores all the values of the angle being used
+Angle = [None]*len(Temp)                    # Stores all values of the angle being used
 for i in range(len(Temp)):                  # Adds the Value of temp to angle
     Angle[i] = Temp[i]/10000                # The anle is divided by 1000000 so it is back to the exact angle
 
