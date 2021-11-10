@@ -1,9 +1,5 @@
-#Date: April 15, 2021
-#Student Name: Abraham Aziz
-#MAC ID: Aziza22
-#Student Number: 400261852
-#Python version 3.8.9
 
+#import libraries
 import serial
 import open3d as o3d
 import math
